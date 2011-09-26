@@ -1,0 +1,97 @@
+\documentclass{article}
+
+\begin{document}
+\title{Architectural principles}
+
+\paragraph{The entity model should be independent of all other modules.}
+
+\begin{itemize}
+  \item You cannot import the data transfer objects (DTOs). This
+    implies that when you want to report a error value back to the
+    front end your best solution is to declare a domain specific
+    ModelError and throw an exception.
+  \item Logic that is specific to an entity should live with the
+    entity unless it requires multiple different entities, in which
+    case this logic should live inside the domain services.
+  \item The entity model contains the repository interfaces but it
+    should not contain the repository interfaces. The implementations
+    are provided dynamically at runtime and can be substituted with
+    whatever is appropriate (in-memory database instances, db4o, sql
+    server, etc).
+  \item Entity classes should not be split between data and logic
+    files.  The entire definition of a class should be in a single
+    file unless we are using code generation. This keeps everything
+    localized. To ensure consistency we should have regions in the
+    entity files. One region for the data definition and another
+    region for the behaviour/logic.
+  \item The entity model should not reference the external services.
+    These services have access to the wcf stack and are subject to
+    change. The recommended way is to either return the required
+    information for the cross-domain call as return values in domain
+    service interfaces or, alternatively, as C\# events.
+   \item The entities that manipulate status codes and states should
+     implement the state pattern.
+   \item You are allowed to create value objects that are used for
+     communicating values between the entity model and the outside
+     callers. These value objects are the contract with the enternal
+     world and don't need to be persisted.
+   \item For persistence reasons entities should ALWAYS have a
+     protected no-arg constructor in addition to any other constructor
+     that they require for their own initialization.
+   \item All the properties of the entities need to be declared with a
+     virtual modifier and the set method needs to be protected. The
+     getter can be public.
+   \item The non-default entity constructor needs to be declared as
+     internal. This ensures that only the entity model project can
+     create entity instances. Of course you can abuse it with
+     reflection but it should be good enough for most cases.
+   \item Entity instantiation should happen through static factory
+     classes when instantiation is complex or alternatively through
+     factory methods.
+
+\end{itemize}
+
+
+The domain services should contain the logic for performing particular
+
+\end{document}
+
+
+Log 
+view whatever, whenever and as much
+as they want in a museum. More enjoyable experience, tailored 
+
+
+
+
+When was your best visit to a museum? A city?
+
+When you had a local showing you around.
+Community website where people contribute their 
+
+There
+What? Why?
+Why is ipod guide better?
+View at your own speed
+View as much as you want
+View whenever you want
+View whatever interests you
+
+Browse available walks on the website, load the tour on your iPod.
+
+A printable map with an index
+
+
+It is a complete tour guide
+
+A walk designed from the people for the people.
+Wikipedia for your ears.
+
+Tapping into the local expertise
+
+Community generated tour guides.
+
+The 
+
+iPod 
+
