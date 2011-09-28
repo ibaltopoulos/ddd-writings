@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\begin{document}
+\title{Imperial presentation points}
+
+\section{Required information}
+\paragraph{Talk title} 
+Agile development in a financial services startup: How 'code first'
+helps us release 15 times a day
+
+\paragraph{Talk abstract} 
+Orbis is a global investment firm managing USD25B for institutional
+clients and high net-worth investors.
+%
+Our vision is to 'democratize' high quality investments by offering
+them direct to everyday investors, through our new online platform
+OrbisAccess.
+%
+In this talk we go over our journey so far to build a high-tech
+startup from the ground up.
+%
+We reflect on how domain driven design (DDD) and code first have
+enabled us to keep our core model clean from technology distractions,
+create testable code, and remain agile in light of constant business
+requirement changes.
+%
+Using continuous delivery in conjuction with DDD we can validate and
+adapt functionality quickly, reduce the risk of individual releases
+and get real-time feedback on the progress of the entire project.
+
+\paragraph{Speaker name} Alvin Mok
+\paragraph{Speaker bio}
+
+\newpage
+
+\section{Structure}
+\subsection{Intro (10 mins, Paul?)}
+I think Orbis has an exceptionally good back story that fits perfectly with his first and second points.  Additionally it sets us apart from the rest of the financial services industry.  It's the Allan Gray story as motivation for why we are doing what we are doing.  The crux of the story is that he's had the vision and inclination for a long time but for retail to be successful the cost of business needs to be lower and we are using technology to do so.
+
+The only downside I see about this as the opening / motivation is that planning for retirement is probably not on the minds of the students.  However we can draw them in by asking about their parents, and if they plan to live long enough to get to their parent's age
+
+\subsection{OA Operations Areas (10 mins, Alvin?)}
+The motivation sets up what we are doing and why IT is the single most important tool for us winning in the retail space.  Then we move into all the operational aspects of the business - enumerating marketing, information gathering by customers, account opening, transactions, funds, customer support.  And at a high level at this point we can discuss how we are using technology to make the operational area better for the customer and cheaper for us.
+
+\subsection{Drill down (20 mins, Ioannis, Qi)}
+Finally we can drill into one or two of these areas to explain in detail what technology choices we've made and why and pros, the cons, the impact to schedule, the skills on the team we need to be successful in that area etc.  What areas we need to drill down on would still be tbd.
+
+\subsection{Closing (5 mins, ?)}
+
+Questions (12 mins, Ioannis, Qi, Paul, Alvin)
+
+\subsection{Goodbye (3 mins, Alvin)}
+
+
+
+\section{Points}
+
+
+You're part of this startup, you've got a vision but you don't know the details of what you're implementing until 
+
+\paragraph{Starting development from the database model is inefficient}
+\begin{itemize} 
+\item for every new concept/table you introduce, you have to create
+  data access objects in the object language
+
+\item it gives higher priority to data organization rather than data
+  usage
+\item your persistence mechanism imposes a relational way of viewing
+  the world. For some applications the relational model is not
+  appropriate. A hierarchical representation would have been better
+
+\item you don't even know the domain yet, we're discovering it as we
+  go along
+\item during the ramp up stage of the project there are frequent
+  changes to the model. That means constant code churn
+\end{itemize}
+
+\end{document}
