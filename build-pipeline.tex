@@ -5,7 +5,39 @@
 
 \maketitle
 
-\paragraph{Some principles}
+\subsection*{How we use nant}
+
+\begin{itemize}
+\item Each nant file contains: external and internal targets. The
+  later have a dash (-) in front of their name.
+\item Each nant file is responsible for a particular stage of the
+  pipeline.
+\item We try to use explicit call targets instead of the declarative
+  depends.
+\end{itemize}
+
+
+
+\subsection*{Implementing continuous integration}
+
+What do I need to implement a continuous integration and continuous
+delivery system?  
+
+\begin{itemize}
+\item \textbf{Version control} What should I put in version control?
+  Everything required by your project: code, tests, database scripts,
+  build and deployment scripts and anything else needed to create,
+  install, run, and test the applicatin.
+\item \textbf{An automated build} You must be able to start your build
+  from the command line. Whatever the mechanism, it must be possible
+  for either a human or a computer to run the build, test, and
+  deployment process in an automated fashion via the command line.
+\item \textbf{Agreement of the team} Continuous integration is a
+  practice not a tool.
+\end{itemize}
+
+
+\subsection*{Some principles}
 
 \begin{itemize}
 \item To enable version control of the pipeline scripts we want to
@@ -14,6 +46,39 @@
 \end{itemize}
 
 
+\subsection*{Essential practices}
+\begin{itemize}
+  \item Don't check in on a broken build
+  \item Always run all your commit tests locally before commiting
+  \item Wait for commit tests to pass before moving on
+  \item Never go home on a broken build
+  \item Always be prepared to revert to the previous revision
+  \item Time-box fixing before reverting your changes
+  \item Don't comment out failing tests
+  \item Take responsibility for all breakages that result from your
+    changes
+\end{itemize}
+
+\subsection*{Principles of Software delivery}
+
+\begin{itemize}
+  \item Create a repeatable, reliable process for releasing software
+  \item Automate almost everything
+  \item Keep everything in version control
+  \item If it hurts, do it more frequently, and bring the pain forward
+  \item build quality in
+  \item Done means released
+  \item Everybody is responsible for the delivery process.
+\end{itemize}
+
+\subsection*{Principles of configuration management}
+
+\begin{itemize}
+\item Keep absolutely everything in version control
+\item Check in regularly to trunk
+\item Use meaningful commit messages, every commit message must have
+  an associated Jira issue number unless it's a Merge. No exceptions!
+\end{itemize}
 
 
 \end{document}
