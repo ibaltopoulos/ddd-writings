@@ -377,18 +377,40 @@ smooth integration of internal teams and external developers.
 %
 \item \textbf{An automated build} 
 %
-You must be able to start your build from the command line.
-%
 Whatever the mechanism, it must be possible for either a human or a
 computer to run the build, test, and deployment process in an
 automated fashion via the command line.
 %
-
+Additionally the steps you follow to execute the process should be
+exactly the same irrespectively of whether it's a human or a computer
+executing the process.
+%
+For our project we've chosen NAnt and TeamCity as our automated build
+tools.
+%
+NAnt is a port of the popular Ant build tool that allows you to
+automate the tedious task of building all the project artifacts.
+%
+It is also and XML-based scripting language that allows you to define
+tasks that are part of your build process.
+%
+For example you can use NAnt to compile your source code, run your
+tests, package your binaries for deployment, copy the installation
+package on the appropriate servers.
+%
+TeamCity is a tool that automates the execution of our nant scripts
+and collects the results in a central place and makes it centrally
+available for the entire team.
 %
 \item \textbf{Agreement of the team} 
 %
 Continuous integration is a practice not a tool.
 %
+For every practice you need a set of ground rules and making sure
+that everyone follows the rules.
+%
+For example one of the problems we had was commiting on a broken
+pipeline.
 \end{itemize}
 
 
@@ -419,8 +441,22 @@ At Orbis Access we see ourselves as a fast-growing technology startup.
 Only two years ago in 2010, the entire team consisted of 4 people;
 Alvin, myself and two developers in Bermuda.
 %
-Over the past two years, the team has grown to 36 people now and we
+Over the past two years, the team has grown to 36 people today and we
 expect to reach 55 by the end of 2012.
+
+These people have studied at the best Universities in the UK and
+around the world.
+%
+For example Qi and I were students here at Imperial not so long ago.
+
+As you can see the members of our team come from more than 15
+countries which creates a very diverse working environment.
+%
+Being able to view situations from different perspectives leads to
+greater creativity, innovation and improves our problem solving
+ability.
+
+
 
 
 
