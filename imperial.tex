@@ -233,22 +233,71 @@ website
 \paragraph{Why is it good?}
 
 
+\section{Our highest priority is to satisfy the customer through early and continuous delivery of valuable software}
 
+\subsection{Why is continuous delivery so important?}
 
-\paragraph{What is the problem with periodic updates?}
+%
+Because, as a browser user it sucks to be asked to get a new browser
+when all I want to do is to check my email.
+%
+Because, as a music lover I hate being forced to restart my computer
+when all I want to do is to listen to some music.
+%
+Because, as a bank customer and a computer scientist, I expect my bank
+to be able to update their systems without asking me to acknowledge
+their routine maintenance.
+%
+ 
+\subsection{So what's the big deal with periodic updates?}
 
-They affect the following two groups of people:
+They have a huge cost in time and money for all of us!
+%
+They affect the users of your application and they affect your
+technology team.
+
+\subsubsection*{How do periodic updates affect the users?}
+
+\subsubsection*{How do periodic updates affect the development team?}
 \begin{itemize}
-  \item The users
-  \item The development team
+  \item \textbf{Every release becomes extremely difficult}
+%
+Most applications of any size are complex to deploy.
+%
+For example in our case our entire system consists of multiple web
+servers, a set of caching servers, application servers and databases.
+%
+To release a new version of the system we need to follow multiple
+steps across several machines.
+%
+Copy the static files to one location, copy the application dlls on
+all the web servers, restart the servers, poke the index page to load
+the application.
+%
+When these steps are done manually, a human needs to make judgements
+which leaves this prone to human error.
+%
+I'm sure you've heard of war stories where it's 2am in the morning and
+your star programmer is staring blanky at a configuration file in a
+production system trying to figure out how to make it work.
+%
+  \item \textbf{They take up developer time}
+%
+Developers are probably the most valuable asset of a technology
+startup.
+%
+They are highly skilled and trained professionals and they are the
+people who create the product.
+%
+Without a product you don't have anything.
+%
+It is really important for them to use their time as effectively as
+possible on the things that matter the most.
+%
 \end{itemize}
 
-\paragraph{How do periodic updates affect the development team?}
-\begin{itemize}
-  \item Every release becomes extremely difficult.
-  \item It takes developer time way from
-\end{itemize}
-
+Oh and to be fair, there are other innovative companies out there that
+can do this, like google chrome, spotify and mint.com.
 
 
 \end{document}
