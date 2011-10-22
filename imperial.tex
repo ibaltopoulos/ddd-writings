@@ -413,6 +413,61 @@ For example one of the problems we had was commiting on a broken
 pipeline.
 \end{itemize}
 
+\subsection{Our implementation of a Continuous Integration pipeline}
+
+At a conceptual level our entire pipeline consists of 6 steps that
+need to be executed after we make any change to our codebase: 1)
+archive the source code for immediate future access, 2) compile the
+code, 3) run all the unit tests, 4) run automated quality assurance
+tools, 5) deploy the code to our development environment, and 6) run
+all the integration tests.
+%
+Whatever the change to our code our binaries have to go throught these
+steps.
+
+\subsubsection*{So what do all these steps do?}
+\begin{itemize}
+  \item \textbf{Archive source code} 
+%
+In this step all that we do is take a copy of the latest version of
+our source code and place it in an easily accessible directory.
+%
+This may seem redundant when you have your version control system so
+let me explain why we do it.
+%
+As your project size increases compilation starts to take longer and
+longer.
+%
+Currently it takes around 18 minutes to compile the entire system on
+my laptop.
+
+  \item \textbf{Compile source code and archive binaries}
+%
+
+\end{itemize}
+
+\subsection{How have we implemented this pipeline in TeamCity}
+TeamCity has the concept of multiple build agents and a single
+controller.
+%
+Build agents sit there idly until the controller gives them some work
+to do.
+%
+Following a map-reduce pattern agents are triggered to do some work.
+%
+When that happens, they go and fetch their input from a file system,
+do whatever work they need to do, and when they finish, place the
+results of their processing back on a file system.
+%
+While working they continuously report their status back to the
+contrller machine.
+
+This sounds a bit complicated so let me give you an example of what
+happens when a developer pushes a new changeset.
+%
+The first available agent checks out the latest version of the code
+from 
+
 
 
 \subsection{Conclusion}
