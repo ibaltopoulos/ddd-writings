@@ -252,7 +252,7 @@ to be able to update their systems without asking me to acknowledge
 their routine maintenance.
 %
  
-\subsection{So what's the big deal with periodic updates?}
+\subsection{So what's the problem with periodic updates?}
 
 They have a huge cost in time and money for all of us!
 %
@@ -287,8 +287,8 @@ Most applications of any size are complex to deploy.
 For example in our case our entire system consists of multiple web
 servers, a set of caching servers, application servers and databases.
 %
-To release a new version of the system we need to follow multiple
-steps across several machines.
+To release a new version of the system we need to perform multiple
+installation steps across several machines.
 %
 Copy the static files to one location, copy the application dlls on
 all the web servers, restart the servers, poke the index page to load
@@ -340,6 +340,88 @@ deployment.
 \end{itemize}
 
 \subsubsection*{What is continuous deployment?}
+
+\subsection{What do I need to implement a continuous integration and continuous deployment system?}
+
+\begin{itemize}
+\item \textbf{Version control}
+%
+What should I put in version control?
+%
+Everything required by your project: code, tests, database scripts,
+build and deployment scripts and anything else needed to create,
+install, run, and test the application.
+%
+In our project we use a distributed version control system called
+Mercurial.
+%
+DVCS have several benefits over more traditional client-server systems
+like Subversion.
+%
+The first benefit is the \textbf{ability to work offline} (e.g. network outage,
+travelling)
+%
+When you're online there is no more waiting for slow responses from a
+remote server which may be in a different country.
+%
+\textbf{Fast everyday operations}. Commit, rollback are instantaneous
+operations and you only take the hit when you push your changesets to
+the team repository or when you pull the changesets from the team
+repository.
+%
+\textbf{Built-in redundancy} as each developer machine contains a full
+clone of the repository and its history
+%
+It has been an ideal tool for our dristributed team and allows the
+smooth integration of internal teams and external developers.
+%
+\item \textbf{An automated build} 
+%
+You must be able to start your build from the command line.
+%
+Whatever the mechanism, it must be possible for either a human or a
+computer to run the build, test, and deployment process in an
+automated fashion via the command line.
+%
+
+%
+\item \textbf{Agreement of the team} 
+%
+Continuous integration is a practice not a tool.
+%
+\end{itemize}
+
+
+
+\subsection{Conclusion}
+About 1,5 hour after a developer pushes a new set of changes to our
+version control repository, if everything goes well, we have a release
+quality version of our software.
+%
+It is up to the business stakeholder to decide whether they actually
+want to push this version up to production.
+
+If you want to know moew about how to do this for your own projects,
+the team will be here after the talk to give you some pointers.
+%
+All the tools we use are either open source, or have free versions for
+small installations and academic institutions.
+
+
+\section{Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done}
+
+The last agile principle I wanted to touch upon today is ``building
+projects around motivated individuals. Giving them the environment and
+support the need, and trust them to get the job done''.
+
+At Orbis Access we see ourselves as a fast-growing technology startup.
+%
+Only two years ago in 2010, the entire team consisted of 4 people;
+Alvin, myself and two developers in Bermuda.
+%
+Over the past two years, the team has grown to 36 people now and we
+expect to reach 55 by the end of 2012.
+
 
 
 \end{document}
