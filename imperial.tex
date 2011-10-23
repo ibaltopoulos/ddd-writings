@@ -321,7 +321,10 @@ can do this, like google chrome, spotify and mint.com.
 
 \subsection{What do we aspire to?}
 
-We want to deploy like flickr.
+Flickr 
+
+
+
 
 
 \subsection{How do we get there?}
@@ -338,6 +341,19 @@ deployment.
     replacing the traditional practice of applying quality control
     after completing all development
 \end{itemize}
+
+For example in our project, we cosider the role of the developer to
+be, to implement the feature and to write all the automated tests to
+prove that this feature works.
+%
+In aggregate what that gives us is the ability to convince ourselves
+that the entire system works every time we add new code by running all
+the automated tests.
+%
+And since you would expect that all those tests will pass, why not
+deploy the new version?
+
+
 
 \subsubsection*{What is continuous deployment?}
 
@@ -415,12 +431,12 @@ pipeline.
 
 \subsection{Our implementation of a Continuous Integration pipeline}
 
-At a conceptual level our entire pipeline consists of 6 steps that
-need to be executed after we make any change to our codebase: 1)
-archive the source code for immediate future access, 2) compile the
-code, 3) run all the unit tests, 4) run automated quality assurance
-tools, 5) deploy the code to our development environment, and 6) run
-all the integration tests.
+At a conceptual level our entire pipeline consists of 6 steps that are
+automatically executed every time a developer makes any change to our
+codebase: 1) archive the source code for immediate future access, 2)
+compile the code, 3) run all the unit tests, 4) run automated quality
+assurance tools, 5) deploy the code to our development environment,
+and 6) run all the automated tests.
 %
 Whatever the change to our code our binaries have to go throught these
 steps.
@@ -478,7 +494,13 @@ quality version of our software.
 It is up to the business stakeholder to decide whether they actually
 want to push this version up to production.
 
-If you want to know moew about how to do this for your own projects,
+We are even able to this with an incomplete product.
+%
+For example in the top right corner we have finished things, but there
+are.
+
+
+If you want to know more about how to do this for your own projects,
 the team will be here after the talk to give you some pointers.
 %
 All the tools we use are either open source, or have free versions for
@@ -499,10 +521,12 @@ Alvin, myself and two developers in Bermuda.
 Over the past two years, the team has grown to 36 people today and we
 expect to reach 55 by the end of 2012.
 
-These people have studied at the best Universities in the UK and
-around the world.
+We go to great pain to find great people, we hire people from the best
+Universities from around the world including from Imperial.
 %
 For example Qi and I were students here at Imperial not so long ago.
+%
+Say more about the specific courses Qi and I did.
 
 As you can see the members of our team come from more than 15
 countries which creates a very diverse working environment.
